@@ -1,0 +1,43 @@
+﻿<Window x:Class="TwentiethDay.Windows.Registration2Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TwentiethDay.Windows"
+        mc:Ignorable="d"
+        Title="Регистратура поликлинники" FontSize="16" Background="AliceBlue" Height="600" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Button Click="click_Back" Content="Назад" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text=" Дата визита: " VerticalAlignment="Center"/>
+                <DatePicker x:Name="dpDateStart" Width="250"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Время визита: " VerticalAlignment="Center"/>
+                 <ComboBox x:Name="cbxTime" Width="200" IsEditable="True"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Цена визита: " VerticalAlignment="Center"/>
+                <TextBox x:Name="tbxCost" Width="250" MaxLength="15"/>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="         Льготы: " VerticalAlignment="Center"/>
+                <ComboBox x:Name="cbxExempt" Width="250" IsEditable="True"/>
+            </StackPanel>
+
+            <TextBlock HorizontalAlignment="Center" Margin="10">
+                <Run>Сумма: </Run>
+                <Run x:Name="txbSumma"/>
+            </TextBlock>
+            
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="10">
+                <TextBlock Text="Примечание: " VerticalAlignment="Center"/>
+                <TextBox x:Name="tbxComment" Width="250" Height="100"/>
+                <TextBlock Text=" * " FontSize="25" Foreground="Red" ToolTip="Необязательное поле"/>
+            </StackPanel>
+            
+            <Button Click="click_Oform" Content="Оформить" Margin="10"/>
+        </StackPanel>
+    </Grid>
+</Window>
